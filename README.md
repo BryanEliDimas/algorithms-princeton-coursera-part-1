@@ -1,0 +1,1 @@
+The code in this repository is derived from the Algorithms, Part I class on Coursera as well as from the book for the class (Algorithms, Fourth Edition). Provided by Kevin Wayne and Robert Sedgewick, Princeton University. The code may be modified for my own studies.
