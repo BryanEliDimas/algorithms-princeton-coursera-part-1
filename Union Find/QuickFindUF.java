@@ -1,8 +1,8 @@
-public class UF {
+public class QuickFindUF {
   private int[] id;
   private int count;
 
-  public UF(int N){
+  public QuickFindUF(int N){
     count = N;
     id = new int[N];
 
@@ -36,7 +36,7 @@ public class UF {
 
   public static void main(String[] args) {
     int N = StdIn.readInt();
-    UF uf = new UF(N);
+    QuickFindUF uf = new QuickFindUF(N);
 
     while(!StdIn.isEmpty()){
       int p = StdIn.readInt();
