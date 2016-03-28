@@ -1,8 +1,8 @@
-public class UF {
+public class QuickUnionUF {
   private int[] id;
   private int count;
 
-  public UF(int N){
+  public QuickUnionUF(int N){
     count = N;
     id = new int[N];
 
@@ -19,24 +19,25 @@ public class UF {
   }
 
   public int find(int p){
-    return id[p];
+    while(p != id[p]) p = id[p];
+
+    return p;
   }
 
   public void union(int p, int q){
-    int pID = find(p);
-    int qID = find(q);
+    int pRoot = find(p);
+    int qRoot = find(q);
 
-    if(pID == qID) return;
+    if(pRoot == qRoot) return;
 
-    for(int i = 0; i < id.length; i++)
-      if(id[i] == pID) id[i] = qID;
+    id[pRoot] = qRoot;
 
     count--;
   }
 
   public static void main(String[] args) {
     int N = StdIn.readInt();
-    UF uf = new UF(N);
+    QuickUnionUF uf = new QuickUnionUF(N);
 
     while(!StdIn.isEmpty()){
       int p = StdIn.readInt();
